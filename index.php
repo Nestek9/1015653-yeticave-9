@@ -116,6 +116,18 @@ $user_name = 'Кристина'; // укажите здесь ваше имя
         ]; 
         ?>
         <ul class="lots__list">
+            <?php 
+              function format_amount( $src_price )
+              { 
+                    $dest_price = ceil ($src_price); 
+
+                    if ($dest_price >= 1000) {
+                        $dest_price = number_format($dest_price, 0, ',' ,' ');
+                    }                    
+
+                    return $dest_price;
+              }
+            ?>  
             <!--заполните этот список из массива с товарами-->
             <?php foreach ($lots__header as $key => $item): ?>
             <li class="lots__item lot">
@@ -128,7 +140,7 @@ $user_name = 'Кристина'; // укажите здесь ваше имя
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount"><?=$item['price']; ?></span>
-                            <span class="lot__cost"><?=$item['price']; ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=format_amount($item['price']) ?><b class="rub">р</b></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
