@@ -125,7 +125,7 @@ $user_name = 'Кристина'; // укажите здесь ваше имя
                         $dest_price = number_format($dest_price, 0, ',' ,' ');
                     }                    
 
-                    return $dest_price;
+                    return $dest_price.' ₽';
               }
             ?>  
             <!--заполните этот список из массива с товарами-->
@@ -140,7 +140,7 @@ $user_name = 'Кристина'; // укажите здесь ваше имя
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount"><?=$item['price']; ?></span>
-                            <span class="lot__cost"><?=format_amount($item['price']) ?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=format_amount($item['price']) ?></span>
                         </div>
                         <div class="lot__timer timer">
                             12:23
